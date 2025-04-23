@@ -72,6 +72,33 @@ Após a build, use o `docker-compose` para rodar o serviço:
 docker-compose up -d
 ```
 
+## 🐳 Imagem Docker
+
+A API está disponível como imagem Docker para múltiplas plataformas, incluindo `linux/amd64` e `linux/arm64`.
+
+Você pode acessar todas as versões disponíveis no Docker Hub:
+
+🔗 [antonioabrantes/system-monitor – Docker Hub](https://hub.docker.com/r/antonioabrantes/system-monitor/tags)
+
+### 📦 Exemplos de uso:
+
+```bash
+# Rodar com a versão mais recente
+docker run -p 3000:3000 antonioabrantes/system-monitor:latest
+
+# Rodar uma versão específica
+docker run -p 3000:3000 antonioabrantes/system-monitor:1.0.1
+```
+
+### 📁 Uso com Portainer
+
+Para facilitar o uso com o **Portainer**, os arquivos necessários para deploy (ex: `docker-compose.yml`, configs, etc.) estão localizados na pasta:
+
+```
+/docker
+```
+
+
 A API será executada na porta `3000` por padrão.
 
 ### 🔒 **Autenticação**
