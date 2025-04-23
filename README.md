@@ -162,14 +162,6 @@ Caso a chave não corresponda ao valor configurado, a resposta será:
 
 ---
 
-### 🐳 **Rodando no Docker**
-
-Você pode usar o **Docker Compose** para rodar a aplicação facilmente. Se você tiver o Docker e o Docker Compose instalados, basta rodar:
-
-```bash
-docker-compose up -d
-```
-
 ### 📝 **Considerações finais**
 
 - Essa API foi projetada para monitorar **em tempo real** (não mantém histórico).
