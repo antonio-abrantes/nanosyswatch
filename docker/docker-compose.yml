@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  monitor:
+    image: system-monitor
+    container_name: system-monitor
+    networks:
+      - monitor
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.monitor.rule=Host(`sub-domonio.dominio.com`)"
+      - "traefik.http.routers.monitor.entrypoints=web,websecure"
+      - "traefik.http.routers.monitor.tls=true"
+      - "traefik.http.routers.monitor.tls.certresolver=leresolver"
+      - "traefik.http.services.monitor.loadbalancer.server.port=3000"
+    restart: unless-stopped
+    privileged: true
+    volumes:
+      - /:/host
+    environment:
+      - SI_DISABLE_CHECK=true
+      - API_KEY=sua_api_key
+
+networks:
+  monitor:
+    external: true
