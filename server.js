@@ -1,16 +1,19 @@
 const express = require("express");
 const si = require("systeminformation");
+const cors = require("cors");
 const authenticate = require("./middlewares/auth");
 
 const app = express();
 const port = 3000;
+
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.json({
     status: 200,
     name: "NanoSysWatch API",
     description: "API para monitoramento de CPU, memória e discos.",
-    version: "1.0.0",
+    version: "1.0.2",
     author: "Antônio Abrantes",
     repository: "https://github.com/antonio-abrantes/nanosyswatch",
     endpoints: {
