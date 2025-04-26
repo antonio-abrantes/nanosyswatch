@@ -159,7 +159,33 @@ Caso a chave não corresponda ao valor configurado, a resposta será:
   ]
 }
 ```
+---
 
+**Endpoint**: `/ping`
+- **Método**: `GET`
+- **Autenticação**: **Requer chave de API** no cabeçalho `x-api-key`.
+- **Descrição**: Verifica se a API está online.
+- **Resposta**:
+```json
+{
+  "message": "pong",
+  "status": "online"
+}
+```
+---
+
+**Endpoint**: `/ping/latency`
+- **Método**: `GET`
+- **Autenticação**: **Requer chave de API** no cabeçalho `x-api-key`.
+- **Descrição**: Verifica se a API está online e retorna o tempo de resposta em milissegundos.
+- **Resposta**:
+```json
+{
+  "message": "pong",
+  "status": "online",
+  "responseTimeMs": 1
+}
+```
 ---
 
 ### 📝 **Considerações finais**

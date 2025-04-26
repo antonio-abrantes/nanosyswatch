@@ -13,13 +13,26 @@ app.get("/", (req, res) => {
     status: 200,
     name: "NanoSysWatch API",
     description: "API para monitoramento de CPU, memória e discos.",
-    version: "1.0.2",
+    version: "1.1.0",
     author: "Antônio Abrantes",
     repository: "https://github.com/antonio-abrantes/nanosyswatch",
     endpoints: {
       "/": "Informações sobre a API",
       "/status": "Retorna dados de uso do sistema (CPU, memória, discos)",
     },
+  });
+});
+
+app.get("/ping", authenticate, (req, res) => {
+  res.status(200).json({ message: "pong", status: "online" });
+});
+
+app.get("/ping/latency", authenticate, (req, res) => {
+  const start = Date.now();
+  res.status(200).json({
+    message: "pong",
+    status: "online",
+    responseTimeMs: Date.now() - start,
   });
 });
 
