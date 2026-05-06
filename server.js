@@ -58,7 +58,7 @@ app.get("/", (req, res) => {
     status: 200,
     name: "NanoSysWatch API",
     description: "API para monitoramento de CPU, memória e discos.",
-    version: "1.1.0",
+    version: "1.1.3",
     author: "Antônio Abrantes",
     repository: "https://github.com/antonio-abrantes/nanosyswatch",
     endpoints: {
